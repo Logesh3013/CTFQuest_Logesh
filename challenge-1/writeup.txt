@@ -1,0 +1,102 @@
+-- =========================================================
+-- Challenge : The Second Look
+-- Category  : Steganography
+-- Difficulty: Easy
+-- =========================================================
+
+-- -------------------------
+-- Description:
+-- -------------------------
+-- An image was shared during a routine exchange.
+-- Initial analysis may suggest an obvious answer,
+-- but trusting the first result could be a mistake.
+--
+-- Take a moment to look again.
+-- The real message is present, but not as text.
+
+-- -------------------------
+-- Flag Format:
+-- -------------------------
+-- SECE{...}
+
+-- -------------------------
+-- Files Provided:
+-- -------------------------
+-- easy_challenge.png
+
+-- -------------------------
+-- Hints:
+-- -------------------------
+-- 1. The first result is often misleading.
+-- 2. Not everything hidden is meant to be extracted.
+-- 3. Sometimes, seeing is better than decoding.
+
+-- =========================================================
+-- OFFICIAL WRITE-UP
+-- =========================================================
+
+-- -------------------------
+-- Step 1: Initial Inspection
+-- -------------------------
+-- The provided file is a PNG image, which suggests
+-- image-based steganography.
+--
+-- A common first step is to use automated tools
+-- to search for hidden data.
+
+-- Command:
+--   zsteg easy_challenge.png
+
+-- -------------------------
+-- Step 2: Misleading Output
+-- -------------------------
+-- Running zsteg produces multiple detections that
+-- resemble file signatures or encoded data.
+--
+-- None of these outputs produce a valid or
+-- trustworthy flag.
+--
+-- This indicates that the challenge is not intended
+-- to be solved through raw data extraction.
+
+-- -------------------------
+-- Step 3: Rethink the Approach
+-- -------------------------
+-- Since textual extraction fails, the hidden data
+-- is likely not stored as ASCII or encoded bytes.
+--
+-- The solver must change perspective and consider
+-- visual analysis instead.
+
+-- -------------------------
+-- Step 4: Visual Bit-Level Inspection
+-- -------------------------
+-- Using a visual steganography tool such as StegSolve,
+-- the image is inspected channel by channel and
+-- bit-plane by bit-plane.
+--
+-- Most views reveal only noise.
+-- One specific view, however, reveals structure.
+
+-- -------------------------
+-- Step 5: Flag Recovery
+-- -------------------------
+-- The hidden payload is a monochrome visual
+-- representation of the flag.
+--
+-- Viewing the correct bit-plane makes the flag
+-- directly readable without further decoding.
+
+-- -------------------------
+-- Final Flag:
+-- -------------------------
+-- SECE{b17_pl4n3_5t3g0}
+
+-- =========================================================
+-- Key Takeaways:
+-- =========================================================
+-- 1. Automated tools can produce convincing decoys.
+-- 2. Not all steganography hides readable text.
+-- 3. Visual inspection is sometimes the correct solution.
+-- 4. A second look can reveal what the first missed.
+-- =========================================================

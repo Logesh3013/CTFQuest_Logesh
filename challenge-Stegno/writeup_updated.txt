@@ -1,0 +1,111 @@
+-- =========================================================
+-- Challenge : Color Decoy
+-- Category  : Steganography
+-- Difficulty: Easy
+-- =========================================================
+
+-- -------------------------
+-- Description:
+-- -------------------------
+-- An image was shared during a routine exchange.
+-- A hidden message appears quickly during analysis,
+-- but trusting the first decoded result may lead
+-- to an incorrect conclusion.
+--
+-- The image contains more than one hidden payload.
+-- Careful observation is required to identify
+-- the correct one.
+
+-- -------------------------
+-- Flag Format:
+-- -------------------------
+-- SECE{...}
+
+-- -------------------------
+-- Files Provided:
+-- -------------------------
+-- challenge.png
+
+-- -------------------------
+-- Hints:
+-- -------------------------
+-- 1. The first decoded output is not always correct.
+-- 2. Different colors may hide different information.
+-- 3. The order of decoding matters.
+
+-- =========================================================
+-- OFFICIAL WRITE-UP
+-- =========================================================
+
+-- -------------------------
+-- Step 1: Initial Inspection
+-- -------------------------
+-- The provided file is a PNG image, suggesting
+-- the use of image steganography.
+--
+-- A common first step is to analyze the image
+-- using an automated steganography tool.
+
+-- Command:
+--   zsteg challenge.png
+
+-- -------------------------
+-- Step 2: Identifying Hidden Payloads
+-- -------------------------
+-- The output of the analysis reveals multiple
+-- readable Base64 strings embedded in different
+-- color channels.
+--
+-- One payload is found in the Red channel,
+-- while another is found in the Blue channel.
+
+-- -------------------------
+-- Step 3: Decoding the Red Channel (Decoy)
+-- -------------------------
+-- The Base64 string extracted from the Red
+-- channel decodes cleanly into a flag-like value.
+
+-- Example:
+--   SECE{this_is_not_the_flag}
+
+-- Although this output matches the expected
+-- flag format, it explicitly indicates that
+-- it is not the correct solution.
+--
+-- This confirms the presence of a decoy.
+
+-- -------------------------
+-- Step 4: Decoding the Blue Channel
+-- -------------------------
+-- The Base64 string extracted from the Blue
+-- channel does not immediately reveal readable
+-- text after decoding.
+--
+-- Applying an additional transformation is
+-- required to recover the real message.
+
+-- -------------------------
+-- Step 5: Correct Decoding Order
+-- -------------------------
+-- The correct decoding sequence is:
+--
+--   Base64 → ROT13
+--
+-- After decoding the Base64 data and applying
+-- a ROT13 transformation, the real flag
+-- becomes readable.
+
+-- -------------------------
+-- Final Flag:
+-- -------------------------
+-- SECE{l5b_bit_plane_ma5ter}
+
+-- =========================================================
+-- Key Takeaways:
+-- =========================================================
+-- 1. Decoy data can be intentionally convincing.
+-- 2. Different color channels can contain
+--    independent hidden payloads.
+-- 3. Correct decoding order is essential.
+-- 4. Verifying results prevents false submissions.
+-- =========================================================

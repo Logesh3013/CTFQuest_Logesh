@@ -1,0 +1,12 @@
+-- =========================================================
+-- Challenge : Double Vision
+-- =========================================================
+
+-- -------------------------
+-- Description:
+-- -------------------------
+-- An image was passed along as ordinary data.
+-- A hidden message reveals itself quickly,
+-- but that discovery may not be the final answer.
+--
+-- Look again and consider what you might have missed.

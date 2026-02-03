@@ -1,0 +1,12 @@
+-- =========================================================
+-- Challenge : The Second Look
+-- =========================================================
+
+-- -------------------------
+-- Description:
+-- -------------------------
+-- An image contains more than it initially reveals.
+-- Automated analysis may point in the wrong direction,
+-- offering results that seem correct at first.
+--
+-- Careful observation will lead you to the truth.
